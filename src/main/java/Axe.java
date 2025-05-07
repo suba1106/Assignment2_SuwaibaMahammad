@@ -1,2 +1,2 @@
-class Axe {
+class Axe implements Item{
 }

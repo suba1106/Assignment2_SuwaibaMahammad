@@ -1,2 +1,2 @@
-public class Shield {
+class Shield implements Item{
 }
