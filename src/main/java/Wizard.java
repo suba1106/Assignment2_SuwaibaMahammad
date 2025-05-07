@@ -1,2 +1,2 @@
-public class Wizard {
+class Wizard extends Character{
 }
