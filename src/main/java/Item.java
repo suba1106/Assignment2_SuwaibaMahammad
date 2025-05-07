@@ -1,2 +1,2 @@
-public class Item {
+interface Item {
 }
