@@ -15,5 +15,7 @@ public class Door {
     }
 
     public int size() {
+        //todo
+        return 1234;
     }
 }
