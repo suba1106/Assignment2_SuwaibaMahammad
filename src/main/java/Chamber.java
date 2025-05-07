@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 public class Chamber {
     Chamber chamber;
     public Chamber(){
@@ -5,5 +7,12 @@ public class Chamber {
     }
     public Chamber(Item item){
 //TODO implement chamber
+    }
+
+    public Door getDoors() {
+    }
+
+    public Item getItems() {
+        return null;
     }
 }

@@ -13,4 +13,7 @@ public class Door {
     public Door getDoor() {
         return door;
     }
+
+    public int size() {
+    }
 }

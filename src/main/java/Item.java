@@ -1,2 +1,3 @@
 interface Item {
+    int size();
 }
