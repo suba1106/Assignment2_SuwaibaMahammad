@@ -13,5 +13,7 @@ class Dungeon{
     }
 
     public boolean isFinished() {
+        //todo
+        return false;
     }
 }
