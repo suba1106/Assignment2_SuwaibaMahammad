@@ -1,4 +1,5 @@
 import java.util.Collection;
+import java.util.List;
 
 public class Chamber {
     Chamber chamber;
@@ -12,7 +13,7 @@ public class Chamber {
     public Door getDoors() {
     }
 
-    public Item getItems() {
+    public List<Item> getItems() {
         return null;
     }
 }
