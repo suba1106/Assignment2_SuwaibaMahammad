@@ -8,6 +8,12 @@ class Character {
     Item[] hand = new Item[2];
     ArrayList<Item> inventory = new ArrayList<>();
 
+    //creates a Character and sets the initial strengh, craft and health
+    protected Character(int strength, int craft, int health) {
+        this.strength = strength;
+        this.craft = craft;
+        this.health = health;
+    }
     //sets the two weapons that are in the hands
     private boolean use(Item item1, Item item2){
         if (inventory.contains(item1) && inventory.contains(item2)) {
