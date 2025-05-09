@@ -1,6 +1,5 @@
 class Wizard extends Character{
-    String name;
-    public Wizard(String name){
-        this.name = name;
+    public Wizard(){
+        super("Wizard", 4, 12, 10);
     }
 }
