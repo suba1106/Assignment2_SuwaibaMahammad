@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class Character {
+public abstract class Character {
     int strength;
     int craft;
     int health;

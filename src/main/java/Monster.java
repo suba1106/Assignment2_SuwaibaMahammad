@@ -1,5 +1,5 @@
-public class Monster {
-    public Monster(String name, int int1, int int2, int int3){
-
+class Monster extends Character {
+    public Monster(String name, int str, int crf, int hea){
+        super(name,str,crf,hea);
     }
 }
