@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 class Dungeon {
     Chamber current;
@@ -10,7 +11,15 @@ class Dungeon {
     }
 
     public List<Action> getActions() {
-        return current.actions();
+        List<Action> actions = new ArrayList<>();
+        actions.add(new Move());
+        if(current.hasMonster()){
+            actions.add(new Fight());
+        }
+        if(current.hasItem()){
+            actions.add(new Pick());
+        }
+        return actions;
     }
 
     public Chamber getCurrentChamber() {
