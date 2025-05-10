@@ -3,18 +3,25 @@ public class Door {
     private Chamber chamber2;
     private Monster monster;
 
-    //connects 2 chambers by door
-    public void connect(Chamber ch1, Chamber ch2){
+    private Door(Chamber ch1, Chamber ch2, Monster mons) {
         this.chamber1 = ch1;
         this.chamber2 = ch2;
+        this.monster = mons;
+    }
+
+    private Door(Chamber ch1, Chamber ch2) {
+        this(ch1, ch2, null); // no monster
+    }
+
+    //connects 2 chambers by door
+    public void connect(Chamber ch1, Chamber ch2){
+        Door door = new Door(ch1, ch2);
         ch1.addDoor(this);
         ch2.addDoor(this);
     }
 
     public void connect(Chamber ch1, Chamber ch2, Monster monster){
-        this.chamber1 = ch1;
-        this.chamber2 = ch2;
-        this.monster = monster;
+        Door door = new Door(ch1, ch2, monster);
         ch1.addDoor(this);
         ch2.addDoor(this);
     }
