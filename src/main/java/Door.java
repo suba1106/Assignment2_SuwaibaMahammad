@@ -14,16 +14,16 @@ public class Door {
     }
 
     //connects 2 chambers by door
-    public void connect(Chamber ch1, Chamber ch2){
+    public static void connect(Chamber ch1, Chamber ch2){
         Door door = new Door(ch1, ch2);
-        ch1.addDoor(this);
-        ch2.addDoor(this);
+        ch1.addDoor(door);
+        ch2.addDoor(door);
     }
 
-    public void connect(Chamber ch1, Chamber ch2, Monster monster){
+    public static void connect(Chamber ch1, Chamber ch2, Monster monster){
         Door door = new Door(ch1, ch2, monster);
-        ch1.addDoor(this);
-        ch2.addDoor(this);
+        ch1.addDoor(door);
+        ch2.addDoor(door);
     }
 
     public Door getDoor() {
