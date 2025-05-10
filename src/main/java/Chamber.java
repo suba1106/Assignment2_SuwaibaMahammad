@@ -12,7 +12,7 @@ public class Chamber {
     }
 
     public Chamber(Item item) {
-        // TODO implement chamber
+        this.items.add(item);
     }
 
     public List<Door> getDoors() {
