@@ -1,7 +1,7 @@
 public class Door {
     private Chamber chamber1;
     private Chamber chamber2;
-    private Monster monster;
+    protected Monster monster;
 
     private Door(Chamber ch1, Chamber ch2, Monster mons) {
         this.chamber1 = ch1;
@@ -10,7 +10,7 @@ public class Door {
     }
 
     private Door(Chamber ch1, Chamber ch2) {
-        this(ch1, ch2, null); // no monster
+        this(ch1, ch2, null);
     }
 
     //connects 2 chambers by door
