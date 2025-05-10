@@ -27,4 +27,10 @@ public class Door {
         //todo
         return 1234;
     }
+
+    protected Chamber getConnectionChamber(Chamber current){
+        if(current == chamber1){return chamber2;}
+        else if(current == chamber2)return chamber2;
+        else throw new IllegalArgumentException();
+    }
 }
