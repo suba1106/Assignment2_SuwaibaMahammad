@@ -1,6 +1,10 @@
 import java.util.List;
 
 class Dungeon {
+    Chamber current;
+    Chamber start;
+    Chamber end;
+
     public Dungeon(Character player, Chamber entry, Chamber goal) {
         // todo
     }
@@ -11,12 +15,12 @@ class Dungeon {
     }
 
     public Chamber getCurrentChamber() {
-        // TODO
-        return null;
+        return current;
     }
 
     public boolean isFinished() {
-        // todo
-        return false;
+        if(current == end){
+            return true;
+        }return false;
     }
 }
