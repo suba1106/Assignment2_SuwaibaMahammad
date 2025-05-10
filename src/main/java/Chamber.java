@@ -23,7 +23,7 @@ public class Chamber {
         return items;
     }
 
-    public void addDoor(Door door) { //adds doors to the lost of doors in the chamber
+    private void addDoor(Door door) { //adds doors to the lost of doors in the chamber
         doors.add(door);
     }
 }
