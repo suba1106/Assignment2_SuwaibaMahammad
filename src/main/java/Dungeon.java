@@ -10,8 +10,7 @@ class Dungeon {
     }
 
     public List<Action> getActions() {
-        // todo
-        return null;
+        return current.actions();
     }
 
     public Chamber getCurrentChamber() {
@@ -22,5 +21,8 @@ class Dungeon {
         if(current == end){
             return true;
         }return false;
+    }
+    protected void setCurrentChamber(Chamber chamber){
+        this.current = chamber;
     }
 }
