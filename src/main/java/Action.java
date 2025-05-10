@@ -1,7 +1,4 @@
-class Action {
+public abstract class Action {
     public void execute() {
-    }
-    public void get(String command){
-
     }
 }
