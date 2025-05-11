@@ -24,7 +24,7 @@ public class TextUI {
             if (doors.get(i).hasMonster())
                 s.append(i + ": Door: " + doors.get(i).getMonster().getName() + "\n  Strength: " +
                         doors.get(i).getMonster().getStrength() + "\n  Craft: " +
-                        doors.get(i).getMonster().getCraft() + "\n  Health: " +
+                        doors.get(i).getMonster().getCraft() + "\n  Health: \n\n" +
                         doors.get(i).getMonster().getHealth());
             else {
                 s.append(i + ": Door: has no monsters\n");
