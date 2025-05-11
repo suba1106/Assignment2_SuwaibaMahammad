@@ -43,4 +43,21 @@ public abstract class Character {
             System.out.println(item + " /n");
         }
     }
+
+    protected int getCraft() {
+        return craft;
+    }
+
+    protected int getHealth() {
+        return health;
+    }
+
+    protected int getStrength() {
+        return strength;
+    }
+
+    protected String getName() {
+        return name;
+    }
+
 }
