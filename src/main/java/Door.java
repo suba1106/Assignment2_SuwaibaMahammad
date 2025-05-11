@@ -13,14 +13,14 @@ public class Door {
         this(ch1, ch2, null);
     }
 
-    //connects 2 chambers by door
-    public static void connect(Chamber ch1, Chamber ch2){
+    // connects 2 chambers by door
+    public static void connect(Chamber ch1, Chamber ch2) {
         Door door = new Door(ch1, ch2);
         ch1.addDoor(door);
         ch2.addDoor(door);
     }
 
-    public static void connect(Chamber ch1, Chamber ch2, Monster monster){
+    public static void connect(Chamber ch1, Chamber ch2, Monster monster) {
         Door door = new Door(ch1, ch2, monster);
         ch1.addDoor(door);
         ch2.addDoor(door);
@@ -30,9 +30,17 @@ public class Door {
         return this;
     }
 
-    protected Chamber getConnectionChamber(Chamber current){
-        if(current == chamber1){return chamber2;}
-        else if(current == chamber2)return chamber2;
-        else throw new IllegalArgumentException();
+    protected Chamber getConnectionChamber(Chamber current) {
+        if (current == chamber1) {
+            return chamber2;
+        } else if (current == chamber2)
+            return chamber2;
+        else
+            throw new IllegalArgumentException();
+    }
+
+    public Monster getMonster() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMonster'");
     }
 }

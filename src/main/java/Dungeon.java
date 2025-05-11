@@ -5,19 +5,22 @@ class Dungeon {
     Chamber current;
     Chamber start;
     Chamber end;
+    Character player;
 
     public Dungeon(Character player, Chamber entry, Chamber goal) {
-        // todo
+        this.player = player;
+        this.start = entry;
+        this.end = goal;
     }
 
     public List<Action> getActions() {
         List<Action> actions = new ArrayList<>();
         actions.add(new Move(this));
         if (current.hasMonster()) {
-            actions.add(new Fight(this));
+            actions.add(new Fight(player, current.getMonster()));
         }
-        if (current.hasItem()) {
-            actions.add(new Pick(this));
+        if (current.getItems() != null) {
+            actions.add(new Pick(current.getItems()));
         }
         return actions;
     }
@@ -38,7 +41,6 @@ class Dungeon {
     }
 
     public Character getPlayer() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPlayer'");
+        return player;
     }
 }
