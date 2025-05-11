@@ -22,12 +22,12 @@ public class TextUI {
         List<Door> doors = r.getDoors();
         for (int i = 0; i < doors.size(); i++) {
             if (doors.get(i).hasMonster())
-                s.append(i + ": Door: " + doors.get(i).getMonster() + "\n  Strength: " +
+                s.append(i + ": Door: " + doors.get(i).getMonster().getName() + "\n  Strength: " +
                         doors.get(i).getMonster().getStrength() + "\n  Craft: " +
                         doors.get(i).getMonster().getCraft() + "\n  Health: " +
                         doors.get(i).getMonster().getHealth());
             else {
-                s.append(i + ": Door: has no monsters");
+                s.append(i + ": Door: has no monsters\n");
             }
         }
         System.out.println(s.toString());
