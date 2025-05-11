@@ -54,7 +54,11 @@ public abstract class Character {
     public void showEquipped() {
         System.out.println("Equipped:");
         for (int i = 0; i < hand.length; i++) {
-            System.out.println(i + ": " + hand[i].name);
+            if (hand[i] != null) {
+                System.out.println(i + ": " + hand[i].name);
+            } else {
+                System.err.println("There is nothing in this hand");
+            }
         }
     }
 
