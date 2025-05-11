@@ -1,4 +1,4 @@
 public abstract class Action {
-    public void execute() {
+    void execute() {
     }
 }
