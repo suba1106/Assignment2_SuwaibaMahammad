@@ -4,17 +4,12 @@ class Monster extends Character {
     }
 
     public boolean isAlive() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isAlive'");
+        if (health > 0)
+            return true;
+        return false;
     }
 
     public String getName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getName'");
-    }
-
-    public boolean isDefeated() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isDefeated'");
+        return name;
     }
 }
