@@ -42,4 +42,10 @@ public class Door {
     public Monster getMonster() {
         return monster;
     }
+
+    public boolean hasMonster() {
+        if (monster != null)
+            return true;
+        return false;
+    }
 }
