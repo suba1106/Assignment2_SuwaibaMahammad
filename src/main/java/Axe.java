@@ -1,6 +1,16 @@
-class Axe implements Item{
+class Axe extends Item {
+    Axe() {
+        super("Axe", 0, 8);
+    }
+
     @Override
-    public int size() {
+    protected int getStrength() {
+        return 8;
+    }
+
+    @Override
+    protected int getCraft() {
         return 0;
     }
+
 }
