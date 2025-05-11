@@ -44,6 +44,10 @@ public abstract class Character {
         }
     }
 
+    public Item[] getEquipped() {
+        return hand;
+    }
+
     protected int getCraft() {
         return craft;
     }
@@ -58,6 +62,10 @@ public abstract class Character {
 
     protected String getName() {
         return name;
+    }
+
+    protected void takeDamage(int damage) {
+        health -= damage;
     }
 
 }
