@@ -26,13 +26,13 @@ class Move extends Action {
             Door selectedDoor = doors.get(choice);
 
             Monster monster = selectedDoor.getMonster(); // assume you implement getMonster() in Door
-            if (monster != null && !monster.isDefeated()) {
+            if (monster != null && monster.isAlive()) {
                 System.out.println("A " + monster.getName() + " jumps out and blocks your path!");
                 // trigger fight here
                 Fight fight = new Fight(dungeon.getPlayer(), monster);
                 fight.execute();
 
-                if (!monster.isDefeated()) {
+                if (monster.isAlive()) {
                     System.out.println("You couldn't defeat the monster. You remain in the current chamber.");
                     return;
                 } else {
