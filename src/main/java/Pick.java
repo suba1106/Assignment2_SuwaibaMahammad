@@ -1,2 +1,2 @@
-public class Pick {
+class Pick extends Action {
 }

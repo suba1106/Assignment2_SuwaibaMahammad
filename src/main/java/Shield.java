@@ -1,2 +1,5 @@
-class Shield implements Item{
+class Shield implements Item {
+    public int size() {
+        return 123;
+    }
 }
