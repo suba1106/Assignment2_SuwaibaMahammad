@@ -40,7 +40,6 @@ public class Door {
     }
 
     public Monster getMonster() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMonster'");
+        return monster;
     }
 }
