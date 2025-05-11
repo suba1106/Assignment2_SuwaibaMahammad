@@ -4,24 +4,24 @@ import java.util.ArrayList;
 public class Chamber {
     Chamber chamber;
     List<Door> doors = new ArrayList<>();
-    Item items;
+    List<Item> items;
 
     public Chamber() {
     }
 
     public Chamber(Item item) {
-        this.items = item;
+        this.items.add(item);
     }
 
     public List<Door> getDoors() {
         return doors;
     }
 
-    public Item getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void addDoor(Door door) { // adds doors to the lost of doors in the chamber
+    public void addDoor(Door door) { // adds doors to the list of doors in the chamber
         doors.add(door);
     }
 
