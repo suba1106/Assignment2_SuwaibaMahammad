@@ -87,16 +87,17 @@ public abstract class Character {
     }
 
     public boolean swap(Item inventoryItem, Item handItem) {
-        for (int i = 0; i < equipped.length; i++) {
-            if (equipped[i] == inventoryItem) {
-                equipped[i] = handItem;
-                return true;
+        if (hand[0] == handItem) {
+            hand[0] = inventoryItem;
+            return true;
+        } else if (hand[1] == handItem) {
+            hand[1] = inventoryItem;
+            return true;
         }
-    }return false;
+        return false;
     }
 
-    // Item not found in equipped list
-    return false;
-}
-
+    public void addInventory(Item choose1) {
+        inventory.add(choose1);
+    }
 }

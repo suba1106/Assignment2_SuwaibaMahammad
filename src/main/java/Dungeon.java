@@ -20,7 +20,7 @@ class Dungeon {
             actions.add(new Fight(player, current.getMonster()));
         }
         if (current.getItems() != null) {
-            actions.add(new Pick(current.getItems()));
+            actions.add(new Pick(this, current.getItems()));
         }
         return actions;
     }
