@@ -34,11 +34,13 @@ public class Chamber {
         return false;
     }
 
-    public Monster getMonster() {
+    public List<Monster> getMonster() {
+        List<Monster> list = new ArrayList<>();
         for (Door door : doors) {
             if (door.getMonster() != null) {
-                System.out.print("Monster Name: " + door.getMonster().name());
+                list.add(door.getMonster());
             }
         }
+        return list;
     }
 }
