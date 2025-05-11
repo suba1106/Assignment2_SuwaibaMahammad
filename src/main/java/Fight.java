@@ -58,7 +58,6 @@ class Fight extends Action {
 
         if (monster.getHealth() <= 0) {
             System.out.println("You defeated the monster!");
-            monster.setDefeated(true); // optional
         } else {
             System.out.println("You were defeated...");
         }
