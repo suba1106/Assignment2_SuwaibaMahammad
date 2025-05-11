@@ -32,6 +32,7 @@ class Dungeon {
 
     public boolean isFinished() {
         if (current == end) {
+            System.out.println("Congratulations! You've made it out alive!");
             return true;
         }
         return false;
