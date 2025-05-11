@@ -7,6 +7,7 @@ import java.util.Random;
 class Fight extends Action {
     private Character player;
     private Monster monster;
+    private List<Monster> monsterList = null;
     private Random rand = new Random();
 
     public Fight(Character player, Monster monster) {
@@ -15,8 +16,8 @@ class Fight extends Action {
     }
 
     public Fight(Character player, List<Monster> monster) { // if multiple monsters in chamber ask which
-        this(player, chooseMonster(monster));
-
+        this.player = player;
+        this.monsterList = monster;
     }
 
     private static Monster chooseMonster(List<Monster> monster) {
@@ -37,6 +38,10 @@ class Fight extends Action {
     }
 
     public void execute() {
+        if (monster == null && monsterList != null) {
+            monster = chooseMonster(monsterList); // choose only now
+        }
+
         System.out.println("A fight begins!");
 
         while (player.getHealth() > 0 && monster.getHealth() > 0) {
@@ -101,5 +106,10 @@ class Fight extends Action {
                 bonus += item.getCraft();
         }
         return bonus;
+    }
+
+    @Override
+    public String toString() {
+        return "Fight";
     }
 }
