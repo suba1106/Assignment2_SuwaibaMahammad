@@ -7,9 +7,11 @@ public class Chamber {
     List<Item> items;
 
     public Chamber() {
+        items = new ArrayList<>();
     }
 
     public Chamber(Item item) {
+        items = new ArrayList<>();
         this.items.add(item);
     }
 
