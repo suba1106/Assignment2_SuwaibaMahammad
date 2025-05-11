@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 class Dungeon {
     Chamber current;
@@ -12,12 +12,12 @@ class Dungeon {
 
     public List<Action> getActions() {
         List<Action> actions = new ArrayList<>();
-        actions.add(new Move());
-        if(current.hasMonster()){
-            actions.add(new Fight());
+        actions.add(new Move(this));
+        if (current.hasMonster()) {
+            actions.add(new Fight(this));
         }
-        if(current.hasItem()){
-            actions.add(new Pick());
+        if (current.hasItem()) {
+            actions.add(new Pick(this));
         }
         return actions;
     }
@@ -27,11 +27,18 @@ class Dungeon {
     }
 
     public boolean isFinished() {
-        if(current == end){
+        if (current == end) {
             return true;
-        }return false;
+        }
+        return false;
     }
-    protected void setCurrentChamber(Chamber chamber){
+
+    protected void setCurrentChamber(Chamber chamber) {
         this.current = chamber;
+    }
+
+    public Character getPlayer() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPlayer'");
     }
 }
