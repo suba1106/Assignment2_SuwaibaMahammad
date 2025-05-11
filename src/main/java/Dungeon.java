@@ -11,6 +11,7 @@ class Dungeon {
         this.player = player;
         this.start = entry;
         this.end = goal;
+        this.current = entry;
     }
 
     public List<Action> getActions() {
