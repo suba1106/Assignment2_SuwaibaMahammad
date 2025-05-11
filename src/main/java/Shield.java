@@ -1,5 +1,5 @@
-class Shield implements Item {
-    public int size() {
-        return 123;
+class Shield extends Item {
+    Shield() {
+        super("Shield", 0, 5);
     }
 }

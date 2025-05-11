@@ -11,7 +11,7 @@ class Move extends Action {
     }
 
     @Override
-    public void execute(){
+    public void execute() {
         Chamber current = dungeon.getCurrentChamber();
         List<Door> doors = current.getDoors();
 
