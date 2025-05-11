@@ -25,7 +25,7 @@ class Move extends Action {
             int choice = Integer.parseInt(reader.readLine());
             Door selectedDoor = doors.get(choice);
 
-            Monster monster = selectedDoor.getMonster(); // assume you implement getMonster() in Door
+            Monster monster = selectedDoor.getMonster();
             if (monster != null && monster.isAlive()) {
                 System.out.println("A " + monster.getName() + " jumps out and blocks your path!");
                 // trigger fight here
@@ -39,8 +39,15 @@ class Move extends Action {
                     System.out.println("You defeated the monster! Proceeding through the door...");
                 }
             }
+
+            dungeon.setCurrentChamber(selectedDoor.getConnectionChamber(current));
         } catch (IOException e) {
             System.out.println("Invalid input. Please try again.");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Move";
     }
 }

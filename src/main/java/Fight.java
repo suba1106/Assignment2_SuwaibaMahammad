@@ -88,7 +88,8 @@ class Fight extends Action {
     private int sumItemStrength(Item[] items) {
         int bonus = 0;
         for (Item item : items) {
-            bonus += item.getStrength();
+            if (item != null)
+                bonus += item.getStrength();
         }
         return bonus;
     }
@@ -96,7 +97,8 @@ class Fight extends Action {
     private int sumItemCraft(Item[] items) {
         int bonus = 0;
         for (Item item : items) {
-            bonus += item.getCraft();
+            if (item != null)
+                bonus += item.getCraft();
         }
         return bonus;
     }

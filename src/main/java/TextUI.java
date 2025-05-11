@@ -18,16 +18,16 @@ public class TextUI {
         StringBuilder s = new StringBuilder();
         s.append("You are in a chamber with " + r.getDoors().size() + " doors\n");
         s.append("There are " + r.getItems().size() + " items in the chamber\n");
-        System.out.println("Here is the list of monsters in the room with you:");
+        s.append("Here is the list of monsters in the room with you:\n");
         List<Door> doors = r.getDoors();
         for (int i = 0; i < doors.size(); i++) {
             if (doors.get(i).hasMonster())
-                System.out.println(i + ": Door: " + doors.get(i).getMonster() + "\n  Strength: " +
+                s.append(i + ": Door: " + doors.get(i).getMonster() + "\n  Strength: " +
                         doors.get(i).getMonster().getStrength() + "\n  Craft: " +
                         doors.get(i).getMonster().getCraft() + "\n  Health: " +
                         doors.get(i).getMonster().getHealth());
             else {
-                System.out.print(i + ": Door: has no monsters");
+                s.append(i + ": Door: has no monsters");
             }
         }
         System.out.println(s.toString());

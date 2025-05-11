@@ -116,4 +116,9 @@ class Pick extends Action {
 
         dungeon.getPlayer().addInventory(choose1);
     }
+
+    @Override
+    public String toString() {
+        return "Pick";
+    }
 }

@@ -12,4 +12,9 @@ public class PrintError extends Action {
     public void execute() {
         System.err.println("Error reading input: " + e.getMessage());
     }
+
+    @Override
+    public String toString() {
+        return "PrintError";
+    }
 }
