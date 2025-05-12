@@ -30,7 +30,7 @@ public class Door {
         if (current == chamber1) {
             return chamber2;
         } else if (current == chamber2)
-            return chamber2;
+            return chamber1;
         else
             throw new IllegalArgumentException();
     }
