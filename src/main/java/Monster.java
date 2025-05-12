@@ -4,9 +4,7 @@ class Monster extends Character {
     }
 
     public boolean isAlive() {
-        if (health > 0)
-            return true;
-        return false;
+        return health > 0;
     }
 
     public String getName() {
