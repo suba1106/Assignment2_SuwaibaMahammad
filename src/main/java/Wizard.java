@@ -1,5 +1,5 @@
 class Wizard extends Character{
     public Wizard(String name){
-        super(name, 4, 12, 10);
+        super(name, 0, 5, 10);
     }
 }
