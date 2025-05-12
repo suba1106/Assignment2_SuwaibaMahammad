@@ -3,13 +3,13 @@ public class Door {
     private final Chamber chamber2;
     protected Monster monster;
 
-    private Door(Chamber ch1, Chamber ch2, Monster mons) {
+    protected Door(Chamber ch1, Chamber ch2, Monster mons) {
         this.chamber1 = ch1;
         this.chamber2 = ch2;
         this.monster = mons;
     }
 
-    private Door(Chamber ch1, Chamber ch2) {
+    protected Door(Chamber ch1, Chamber ch2) {
         this(ch1, ch2, null);
     }
 
