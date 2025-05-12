@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Chamber {
-    Chamber chamber;
     List<Door> doors = new ArrayList<>();
     List<Item> items;
 
