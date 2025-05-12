@@ -10,7 +10,7 @@ public class CharacterTest {
     private Monster monster;
     private MagicWand wand;
 
-    @  BeforeEach
+    @BeforeEach
     void setUp() {
         warrior = new Warrior("Thor");
         wizard = new Wizard("Gandalf");
@@ -78,5 +78,12 @@ public class CharacterTest {
         wizard.use(axe, shield);
         wizard.showEquipped();
         assertArrayEquals(expected, wizard.getEquipped());
+    }
+
+    @Test
+    void removeItem() {
+        wizard.addInventory(axe);
+        wizard.removeItem(axe);
+        assertEquals(0, wizard.getInventory().size());
     }
 }

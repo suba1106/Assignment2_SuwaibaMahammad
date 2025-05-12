@@ -14,6 +14,7 @@ public class Chamber {
 
     /**
      * constructs Chamber by initializing items list and adding item in to the list
+     * 
      * @param item the item you want in the chamber
      */
     public Chamber(Item item) {
@@ -39,6 +40,7 @@ public class Chamber {
 
     /**
      * adds a door to the Chamber
+     * 
      * @param door the door you want added
      */
     protected void addDoor(Door door) { // adds doors to the list of doors in the chamber
@@ -47,6 +49,7 @@ public class Chamber {
 
     /**
      * Checks if the door has monster
+     * 
      * @return boolean, true if the door has a monster, false otherwise
      */
     protected boolean hasMonster() {
@@ -60,6 +63,7 @@ public class Chamber {
 
     /**
      * gives a list of monsters by iterating through the doors
+     * 
      * @return a list of monsters in the chamber
      */
     protected List<Monster> getMonster() {
@@ -70,13 +74,5 @@ public class Chamber {
             }
         }
         return list;
-    }
-
-    /**
-     * removes an item from the items list
-     * @param item item wanting removal
-     */
-    protected void removeItem(Item item){
-        items.remove(item);
     }
 }

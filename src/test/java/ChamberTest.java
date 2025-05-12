@@ -41,7 +41,7 @@ public class ChamberTest {
     }
 
     @Test
-    void testHasMonster(){
+    void testHasMonster() {
         chamber.addDoor(doorWithMonster);
         assertEquals(1, chamber.getMonster().size());
         assertTrue(chamber.getMonster().contains(monster));

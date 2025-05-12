@@ -11,10 +11,11 @@ public abstract class Character {
 
     /**
      * creates a Character and sets the initial strength, craft and health
-     * @param name the name of your character
+     * 
+     * @param name     the name of your character
      * @param strength how strong your character is
-     * @param craft how crafty your character is
-     * @param health initial hp of the character
+     * @param craft    how crafty your character is
+     * @param health   initial hp of the character
      */
     protected Character(String name, int strength, int craft, int health) {
         this.strength = strength;
@@ -25,6 +26,7 @@ public abstract class Character {
 
     /**
      * sets the two weapons that are in the hands and removes from inventory
+     * 
      * @param item1 the first weapon you want to equip
      * @param item2 second weapon you want to equip
      */
@@ -43,6 +45,7 @@ public abstract class Character {
 
     /**
      * sets the weapon that are in the hands and removes from inventory
+     * 
      * @param item1 the item you want equipped
      * @return true if task completed successfully, false otherwise
      */
@@ -86,6 +89,7 @@ public abstract class Character {
 
     /**
      * gets the weapons in hand
+     * 
      * @return array of items in hand
      */
     public Item[] getEquipped() {
@@ -94,6 +98,7 @@ public abstract class Character {
 
     /**
      * gets craft value of the character
+     * 
      * @return int representing craft value
      */
     protected int getCraft() {
@@ -102,6 +107,7 @@ public abstract class Character {
 
     /**
      * gets health value of the character
+     * 
      * @return int representing health value
      */
     protected int getHealth() {
@@ -110,6 +116,7 @@ public abstract class Character {
 
     /**
      * gets strength value of the character
+     * 
      * @return int representing strength value
      */
     protected int getStrength() {
@@ -118,6 +125,7 @@ public abstract class Character {
 
     /**
      * gets name of the character
+     * 
      * @return string representing name
      */
     protected String getName() {
@@ -126,6 +134,7 @@ public abstract class Character {
 
     /**
      * subtracts damage from the character's hp
+     * 
      * @param damage the amount of damage done to the character
      */
     protected void takeDamage(int damage) {
@@ -134,6 +143,7 @@ public abstract class Character {
 
     /**
      * gets inventory
+     * 
      * @return list of items representing inventory
      */
     public List<Item> getInventory() {
@@ -142,8 +152,9 @@ public abstract class Character {
 
     /**
      * swaps an item from the inventory and equips it
+     * 
      * @param inventoryItem the item from the inventory
-     * @param handItem the already equipped item
+     * @param handItem      the already equipped item
      * @return true if task completed successfully, false otherwise
      */
     public boolean swap(Item inventoryItem, Item handItem) {
@@ -163,9 +174,19 @@ public abstract class Character {
 
     /**
      * adds item to inventory
+     * 
      * @param choose1 the item oyu want added
      */
     public void addInventory(Item choose1) {
         inventory.add(choose1);
+    }
+
+    /**
+     * removes an item from the items list
+     * 
+     * @param item item wanting removal
+     */
+    protected void removeItem(Item item) {
+        inventory.remove(item);
     }
 }

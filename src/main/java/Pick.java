@@ -9,8 +9,9 @@ class Pick extends Action {
 
     /**
      * pick constructor
+     * 
      * @param dungeon the dungeon the player is in
-     * @param items the list of items in the chamber
+     * @param items   the list of items in the chamber
      */
     public Pick(Dungeon dungeon, List<Item> items) {
         this.items = items;
@@ -22,6 +23,7 @@ class Pick extends Action {
      * pick something from the inventory to equip,
      * pick something from the inventory to swap into hand
      * depending on the choice the function is called
+     * 
      * @exception IOException e if the player inputs something wrong
      */
     @Override
@@ -63,6 +65,8 @@ class Pick extends Action {
         try {
             int choice = Integer.parseInt(reader.readLine());
             choose = dungeon.getPlayer().getInventory().get(choice);
+            dungeon.getPlayer().removeItem(choose);
+
         } catch (IOException e) {
             System.out.println("Invalid input. Please try again.");
         }
@@ -139,7 +143,6 @@ class Pick extends Action {
         try {
             int choice = Integer.parseInt(reader.readLine());
             choose1 = items.get(choice);
-            dungeon.getCurrentChamber().removeItem(choose1);
         } catch (IOException e) {
             System.out.println("Invalid input. Please try again.");
         }
@@ -149,6 +152,7 @@ class Pick extends Action {
 
     /**
      * overriding method from parent
+     * 
      * @return "Pick"
      */
     @Override
