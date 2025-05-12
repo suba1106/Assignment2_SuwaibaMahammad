@@ -15,19 +15,19 @@ public class Chamber {
         this.items.add(item);
     }
 
-    public List<Door> getDoors() {
+    protected List<Door> getDoors() {
         return doors;
     }
 
-    public List<Item> getItems() {
+    protected List<Item> getItems() {
         return items;
     }
 
-    public void addDoor(Door door) { // adds doors to the list of doors in the chamber
+    protected void addDoor(Door door) { // adds doors to the list of doors in the chamber
         doors.add(door);
     }
 
-    public boolean hasMonster() {
+    protected boolean hasMonster() {
         for (Door door : doors) {
             if (door.getMonster() != null) {
                 return true;
@@ -36,7 +36,7 @@ public class Chamber {
         return false;
     }
 
-    public List<Monster> getMonster() {
+    protected List<Monster> getMonster() {
         List<Monster> list = new ArrayList<>();
         for (Door door : doors) {
             if (door.getMonster() != null) {
