@@ -10,7 +10,7 @@ public class CharacterTest {
     private Monster monster;
     private MagicWand wand;
 
-    @BeforeEach
+    @  BeforeEach
     void setUp() {
         warrior = new Warrior("Thor");
         wizard = new Wizard("Gandalf");
