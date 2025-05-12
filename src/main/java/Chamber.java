@@ -71,4 +71,12 @@ public class Chamber {
         }
         return list;
     }
+
+    /**
+     * removes an item from the items list
+     * @param item item wanting removal
+     */
+    protected void removeItem(Item item){
+        items.remove(item);
+    }
 }

@@ -139,6 +139,7 @@ class Pick extends Action {
         try {
             int choice = Integer.parseInt(reader.readLine());
             choose1 = items.get(choice);
+            dungeon.getCurrentChamber().removeItem(choose1);
         } catch (IOException e) {
             System.out.println("Invalid input. Please try again.");
         }
