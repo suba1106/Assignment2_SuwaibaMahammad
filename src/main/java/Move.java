@@ -29,7 +29,7 @@ class Move extends Action {
             if (monster != null && monster.isAlive()) {
                 System.out.println("A " + monster.getName() + " jumps out and blocks your path!");
                 // trigger fight here
-                Fight fight = new Fight(dungeon.getPlayer(), monster);
+                Fight fight = new Fight(selectedDoor, dungeon.getPlayer(), monster);
                 fight.execute();
 
                 if (monster.isAlive()) {

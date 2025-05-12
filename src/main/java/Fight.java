@@ -9,15 +9,19 @@ class Fight extends Action {
     private Monster monster;
     private List<Monster> monsterList = null;
     private Random rand = new Random();
+    private Door door;
+    private Chamber ch;
 
-    public Fight(Character player, Monster monster) {
+    public Fight(Door d, Character player, Monster monster) {
         this.player = player;
         this.monster = monster;
+        this.door = d;
     }
 
-    public Fight(Character player, List<Monster> monster) { // if multiple monsters in chamber ask which
+    public Fight(Chamber ch, Character player, List<Monster> monster) { // if multiple monsters in chamber ask which
         this.player = player;
         this.monsterList = monster;
+        this.ch = ch;
     }
 
     private static Monster chooseMonster(List<Monster> monster) {
@@ -40,6 +44,11 @@ class Fight extends Action {
     public void execute() {
         if (monster == null && monsterList != null) {
             monster = chooseMonster(monsterList); // choose only now
+        }
+        for (Door doo : ch.getDoors()) {
+            if (doo.hasMonster() && monster == doo.getMonster()) {
+                door = doo;
+            }
         }
 
         System.out.println("A fight begins!");
@@ -85,6 +94,7 @@ class Fight extends Action {
 
         if (monster.getHealth() <= 0) {
             System.out.println("You defeated the monster!");
+            door.removeMonster();
         } else {
             System.out.println("You were defeated...");
         }

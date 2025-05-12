@@ -48,4 +48,8 @@ public class Door {
             return true;
         return false;
     }
+
+    public void removeMonster() {
+        monster = null;
+    }
 }
