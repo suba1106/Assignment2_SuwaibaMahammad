@@ -7,6 +7,12 @@ class Dungeon {
     Chamber end;
     Character player;
 
+    /**
+     * Dungeon constructor
+     * @param player the player
+     * @param entry the starting chamber
+     * @param goal end chamber
+     */
     public Dungeon(Character player, Chamber entry, Chamber goal) {
         this.player = player;
         this.start = entry;
@@ -14,7 +20,11 @@ class Dungeon {
         this.current = entry;
     }
 
-    public List<Action> getActions() {
+    /**
+     * gets a possible list of actions at the position
+     * @return List of actions possible
+     */
+    protected List<Action> getActions() {
         List<Action> actions = new ArrayList<>();
         actions.add(new Move(this));
         if (current.hasMonster()) {
@@ -26,11 +36,20 @@ class Dungeon {
         return actions;
     }
 
-    public Chamber getCurrentChamber() {
+    /**
+     * gets the current position of the character
+     * @return Chamber the player is at
+     */
+    protected Chamber getCurrentChamber() {
         return current;
     }
 
-    public boolean isFinished() {
+    /**
+     * checks if the game is finished
+     * @return true if current chamber == end chamber and prints a messgae to playe
+     * false otherwise
+     */
+    protected boolean isFinished() {
         if (current == end) {
             System.out.println("Congratulations! You've made it out alive!");
             return true;
@@ -38,11 +57,19 @@ class Dungeon {
         return false;
     }
 
+    /**
+     * sets the current chamber
+     * @param chamber the chamber you want to be your new current chamber
+     */
     protected void setCurrentChamber(Chamber chamber) {
         this.current = chamber;
     }
 
-    public Character getPlayer() {
+    /**
+     * gets the player
+     * @return Character representing the player
+     */
+    protected Character getPlayer() {
         return player;
     }
 }

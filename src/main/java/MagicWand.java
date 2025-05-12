@@ -1,5 +1,8 @@
 class MagicWand extends Item {
+    /**
+     * magicWand constructor
+     */
     MagicWand() {
-        super("Axe", 7, 1);
+        super("MagicWand", 7, 1);
     }
 }

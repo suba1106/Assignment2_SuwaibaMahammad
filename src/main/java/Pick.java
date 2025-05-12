@@ -7,11 +7,24 @@ class Pick extends Action {
     List<Item> items;
     Dungeon dungeon;
 
+    /**
+     * pick constructor
+     * @param dungeon the dungeon the player is in
+     * @param items the list of items in the chamber
+     */
     public Pick(Dungeon dungeon, List<Item> items) {
         this.items = items;
         this.dungeon = dungeon;
     }
 
+    /**
+     * gives the player 3 options. Pick something off the ground,
+     * pick something from the inventory to equip,
+     * pick something from the inventory to swap into hand
+     * depending on the choice the function is called
+     * @exception IOException e if the player inputs something wrong
+     */
+    @Override
     public void execute() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -25,7 +38,7 @@ class Pick extends Action {
             if (choice == 0) {
                 pickFloor();
             } else if (choice == 1) {
-                swaphand();
+                swapHand();
             } else if (choice == 2) {
                 pickFromInvetory();
             } else {
@@ -36,6 +49,11 @@ class Pick extends Action {
         }
     }
 
+    /**
+     * prints the inventory adn asks the user to choose the item they want to equip
+     * if the hand already has 2 items, the system tells the user to choose the
+     * other option
+     */
     private void pickFromInvetory() {
         System.out.println("You have " + dungeon.getPlayer().getInventory().size() + " items in your iventory");
         dungeon.getPlayer().showInventory();
@@ -63,8 +81,14 @@ class Pick extends Action {
 
     }
 
-    private void swaphand() {
-        System.out.println("You have " + dungeon.getPlayer().inventory.size() + " items in your iventory");
+    /**
+     * prints the inventory and prints the items in hand
+     * asks the user to choose an item in hand and an item
+     * from inventory
+     * then the items are swapped
+     */
+    private void swapHand() {
+        System.out.println("You have " + dungeon.getPlayer().inventory.size() + " items in your inventory\n");
         dungeon.getPlayer().showInventory();
         System.out.println("You have the following in hand right now: ");
         dungeon.getPlayer().showEquipped();
@@ -96,6 +120,11 @@ class Pick extends Action {
         }
     }
 
+    /**
+     * picks an item off the chamber floor and adds ot inventory
+     * asks the user to choose which object to pick up after
+     * printing everything in the chamber
+     */
     private void pickFloor() {
         List<Item> items = dungeon.getCurrentChamber().getItems();
         System.out.println("Items in chamber:");
@@ -117,6 +146,10 @@ class Pick extends Action {
         dungeon.getPlayer().addInventory(choose1);
     }
 
+    /**
+     * overriding method from parent
+     * @return "Pick"
+     */
     @Override
     public String toString() {
         return "Pick";

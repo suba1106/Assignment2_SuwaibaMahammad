@@ -4,12 +4,22 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 class Move extends Action {
-    private Dungeon dungeon;
+    private final Dungeon dungeon;
 
+    /**
+     * Move constructor
+     * @param dungeon the dungeon the player is in
+     */
     public Move(Dungeon dungeon) {
         this.dungeon = dungeon;
     }
 
+    /**
+     * asks the user which door they want to move through. If there is a
+     * monster guarding the door they choose, a fight sequence is initiated
+     * if player wins they move through the door
+     * if there is no monster the player just moves through
+     */
     @Override
     public void execute() {
         Chamber current = dungeon.getCurrentChamber();
@@ -46,6 +56,10 @@ class Move extends Action {
         }
     }
 
+    /**
+     * overriding method to string
+     * @return String saying Move
+     */
     @Override
     public String toString() {
         return "Move";
