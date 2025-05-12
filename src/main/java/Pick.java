@@ -50,7 +50,7 @@ class Pick extends Action {
         }
 
         Item[] hand = dungeon.getPlayer().getEquipped();
-        Boolean worked = false;
+        boolean worked = false;
         for (Item item : hand) {
             if (item == null) {
                 worked = dungeon.getPlayer().use(choose);

@@ -15,6 +15,7 @@ public class CharacterTest {
         warrior = new Warrior("Thor");
         wizard = new Wizard("Gandalf");
         axe = new Axe();
+        wand = new MagicWand();
         shield = new Shield();
         monster = new Monster("Goblin", 10, 2, 1);
     }
