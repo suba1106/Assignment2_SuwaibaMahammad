@@ -1,6 +1,6 @@
 public class Door {
-    private Chamber chamber1;
-    private Chamber chamber2;
+    private final Chamber chamber1;
+    private final Chamber chamber2;
     protected Monster monster;
 
     private Door(Chamber ch1, Chamber ch2, Monster mons) {
