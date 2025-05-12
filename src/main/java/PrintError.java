@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class PrintError extends Action {
+ class PrintError extends Action {
     Dungeon dungeon;
     IOException e;
 

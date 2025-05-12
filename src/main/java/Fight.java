@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 class Fight extends Action {
-    private Character player;
+    private final Character player;
     private Monster monster;
     private List<Monster> monsterList = null;
     private Random rand = new Random();
