@@ -9,7 +9,7 @@ public class PrintError extends Action {
         this.e = e;
     }
 
-    public void execute() {
+    protected void execute() {
         System.err.println("Error reading input: " + e.getMessage());
     }
 

@@ -26,10 +26,6 @@ public class Door {
         ch2.addDoor(door);
     }
 
-    public Door getDoor() {
-        return this;
-    }
-
     protected Chamber getConnectionChamber(Chamber current) {
         if (current == chamber1) {
             return chamber2;
@@ -39,15 +35,15 @@ public class Door {
             throw new IllegalArgumentException();
     }
 
-    public Monster getMonster() {
+    protected Monster getMonster() {
         return monster;
     }
 
-    public boolean hasMonster() {
+    protected boolean hasMonster() {
         return monster != null;
     }
 
-    public void removeMonster() {
+    protected void removeMonster() {
         monster = null;
     }
 }
