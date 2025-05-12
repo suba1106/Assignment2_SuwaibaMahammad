@@ -45,9 +45,11 @@ class Fight extends Action {
         if (monster == null && monsterList != null) {
             monster = chooseMonster(monsterList); // choose only now
         }
-        for (Door doo : ch.getDoors()) {
-            if (doo.hasMonster() && monster == doo.getMonster()) {
-                door = doo;
+        if (ch != null) {
+            for (Door doo : ch.getDoors()) {
+                if (doo.hasMonster() && monster == doo.getMonster()) {
+                    door = doo;
+                }
             }
         }
 
