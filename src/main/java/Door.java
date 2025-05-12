@@ -44,9 +44,7 @@ public class Door {
     }
 
     public boolean hasMonster() {
-        if (monster != null)
-            return true;
-        return false;
+        return monster != null;
     }
 
     public void removeMonster() {
