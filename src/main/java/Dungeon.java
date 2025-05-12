@@ -18,7 +18,7 @@ class Dungeon {
         List<Action> actions = new ArrayList<>();
         actions.add(new Move(this));
         if (current.hasMonster()) {
-            actions.add(new Fight(player, current.getMonster()));
+            actions.add(new Fight(current, player, current.getMonster()));
         }
         if (current.getItems() != null) {
             actions.add(new Pick(this, current.getItems()));

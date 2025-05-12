@@ -10,7 +10,7 @@ class Fight extends Action {
     private List<Monster> monsterList = null;
     private Random rand = new Random();
     private Door door;
-    private Chamber ch;
+    private Chamber ch = null;
 
     public Fight(Door d, Character player, Monster monster) {
         this.player = player;
