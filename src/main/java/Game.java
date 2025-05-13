@@ -1,4 +1,10 @@
 public class Game {
+    //------------------------------------------------------
+    // Assignment 2
+    // Written by: Suwaiba Mahammad 2144851
+    // For SES350 Section (305) – Spring 2025
+    // --------------------------------------------------------
+    // this ia DUNGEONS AND DRAGONS game type progra. it has a tex based ui
     public static void main(String[] args) {
         // initialize some chambers
         Chamber[] chambers = new Chamber[] {
