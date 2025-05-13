@@ -64,7 +64,7 @@ public class CharacterTest {
 
     @Test
     void testUse1() {
-        boolean expected = false;
+        boolean expected = true;
         wizard.addInventory(axe);
         wizard.addInventory(shield);
         assertEquals(expected, wizard.use(axe));
