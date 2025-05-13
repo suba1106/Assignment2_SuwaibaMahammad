@@ -14,7 +14,7 @@ class Monster extends Character {
      * checks if the monster is alive
      * @return true if health > 0, false otherwise
      */
-    public boolean isAlive() {
+    protected boolean isAlive() {
         return health > 0;
     }
 }

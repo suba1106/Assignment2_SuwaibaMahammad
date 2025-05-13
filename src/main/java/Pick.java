@@ -57,32 +57,33 @@ class Pick extends Action {
      * other option
      */
     private void pickFromInvetory() {
-        System.out.println("You have " + dungeon.getPlayer().getInventory().size() + " items in your iventory");
-        dungeon.getPlayer().showInventory();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Please input the number to equip: ");
-        Item choose = null;
-        try {
-            int choice = Integer.parseInt(reader.readLine());
-            choose = dungeon.getPlayer().getInventory().get(choice);
-            dungeon.getPlayer().removeItem(choose);
+        System.out.println("You have " + dungeon.getPlayer().getInventory().size() + " items in your inventory");
+        if(dungeon.getPlayer().getInventory().size() > 0) {
+            dungeon.getPlayer().showInventory();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Please input the number to equip: ");
+            Item choose = null;
+            try {
+                int choice = Integer.parseInt(reader.readLine());
+                choose = dungeon.getPlayer().getInventory().get(choice);
+                dungeon.getPlayer().removeItem(choose);
 
-        } catch (IOException e) {
-            System.out.println("Invalid input. Please try again.");
-        }
+            } catch (IOException e) {
+                System.out.println("Invalid input. Please try again.");
+            }
 
-        Item[] hand = dungeon.getPlayer().getEquipped();
-        boolean worked = false;
-        for (Item item : hand) {
-            if (item == null) {
-                worked = dungeon.getPlayer().use(choose);
-                break;
+            Item[] hand = dungeon.getPlayer().getEquipped();
+            boolean worked = false;
+            for (Item item : hand) {
+                if (item == null) {
+                    worked = dungeon.getPlayer().use(choose);
+                    break;
+                }
+            }
+            if (!worked) {
+                System.out.println("The hand is full please use the swaphand method");
             }
         }
-        if (!worked) {
-            System.out.println("The hand is full please use the swaphand method");
-        }
-
     }
 
     /**
@@ -93,34 +94,36 @@ class Pick extends Action {
      */
     private void swapHand() {
         System.out.println("You have " + dungeon.getPlayer().inventory.size() + " items in your inventory\n");
-        dungeon.getPlayer().showInventory();
-        System.out.println("You have the following in hand right now: ");
-        dungeon.getPlayer().showEquipped();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Please input the number to equip: ");
-        Item choose1 = null;
+        if(dungeon.getPlayer().getInventory().size() > 0) {
+            dungeon.getPlayer().showInventory();
+            System.out.println("You have the following in hand right now: ");
+            dungeon.getPlayer().showEquipped();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Please input the number to equip: ");
+            Item choose1 = null;
 
-        try {
-            int choice = Integer.parseInt(reader.readLine());
-            choose1 = dungeon.getPlayer().getInventory().get(choice);
-        } catch (IOException e) {
-            System.out.println("Invalid input. Please try again.");
-        }
+            try {
+                int choice = Integer.parseInt(reader.readLine());
+                choose1 = dungeon.getPlayer().getInventory().get(choice);
+            } catch (IOException e) {
+                System.out.println("Invalid input. Please try again.");
+            }
 
-        System.out.println("Please input the number in hand to swap: ");
-        Item choose2 = null;
+            System.out.println("Please input the number in hand to swap: ");
+            Item choose2 = null;
 
-        try {
-            int choice = Integer.parseInt(reader.readLine());
-            choose2 = dungeon.getPlayer().getEquipped()[choice];
-        } catch (IOException e) {
-            System.out.println("Invalid input. Please try again.");
-        }
+            try {
+                int choice = Integer.parseInt(reader.readLine());
+                choose2 = dungeon.getPlayer().getEquipped()[choice];
+            } catch (IOException e) {
+                System.out.println("Invalid input. Please try again.");
+            }
 
-        if (dungeon.getPlayer().swap(choose1, choose2)) {
-            System.out.println("Success");
-        } else {
-            System.err.println("Swap failed");
+            if (dungeon.getPlayer().swap(choose1, choose2)) {
+                System.out.println("Success");
+            } else {
+                System.err.println("Swap failed");
+            }
         }
     }
 

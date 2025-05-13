@@ -16,7 +16,7 @@ public class Game {
         Door.connect(chambers[4], chambers[5], new Monster("Boss", 0, 6, 7));
         Character player = new Wizard("Gandalf");
         // initialize the dungeon with player, entry chamber, and goal chamber
-        Dungeon d = new Dungeon(player, chambers[0], chambers[4]);
+        Dungeon d = new Dungeon(player, chambers[0], chambers[5]);
         TextUI ui = new TextUI(); ui.play(d);
     }
 }
